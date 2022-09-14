@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        .box{
+            padding: 20px;
+            border:1px solid black;
+            height: 300px;
+        }
+        .item{
+            border: 1px dotted blue;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="item">1</div>
+    </div>
+
+    <script>
+        $(".box").prepend("1111");
+        function getitem(id){
+            return `<div class="item">${id}</div>`;
+        }
+        // 자식기준
+        $(".box").prepend(getitem(2));
+        $(".box").prepend(getitem(3));
+        $(".box").append(getitem(4));
+        // 나기준
+        $(".box").before(getitem(5)); 
+        $(".box").after(getitem(6)); 
+        // 동적인 코드를 위해 부모를 생성하고 prepend, append를 통해서 생성해야.. 배치가 됨
+
+    </script>
+</body>
+</html>

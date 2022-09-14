@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        // 배열
+        let list = [1,2,3,4];
+        // 자바스크립의 리스트를 다루는 함수 : 30여개 
+        console.log(list);
+        
+        // 값 뿌리기
+        console.log(list[0]);
+
+        // for문
+        list.forEach(hello);
+
+        // 변수에 함수를 담을 수도 있음, 어차피 변수로 호출이 가능하니까 익명함수 로 사용 hello 지움
+        // 다트에서는 function도 필요없음
+        let e = function hello(item){
+            console.log('hellow', item);
+        }
+
+        list.forEach((i)=>{
+            console.log(i);
+        }); // 람다식 얘는 =이거임
+
+        // 값 추가
+        list.push(5); // 방법1 : 기존 리스트 변경
+
+        list.concat(5); // 방법2 : 기존 리스트을 복사해서 새로운 걸 만들어줌 아래처럼 => 불변
+        let list2 = list.concat(6); // 깊은 복사
+
+        // for, 함수 설명
+        list2.forEach((i)=> {
+            console.log('LIST2', i);
+        });
+        // 자바스크립트는 절대 기존 값을 수정하지 않고, 이런 식으로 깊은 복사를 함
+
+        // 방법3 스프레드 연산자 : list2의 아이템을 끄집어내서 하나씩 흩뿌림 = 타입이 없는 원시데이터로 끄냄
+        // 스프레드를 하면 다른 타입을 바꿔낼 수 있음
+        let list3 = [0, ...list2, 7]; // 방법3 => 값추가 이걸로 하기
+        list3.forEach((i)=>{
+            console.log("list3", i);
+        }); 
+    </script>
+</body>
+</html>

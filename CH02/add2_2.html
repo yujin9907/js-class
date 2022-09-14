@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        .box {
+            padding: 20px;
+            border: 1px solid black;
+            height: 300px;
+        }
+
+        .item {
+            border: 1px dotted blue;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="item">1</div>
+    </div>
+
+    <script>
+        function getItem(id) {
+            return `<div class="item">${id}</div>`;
+        }
+
+        console.log("문자열", getItem(1));
+
+        // 새로운 엘레멘트를 생성하는 법 (바닐라 자바스크립트)
+        function getItemObject(id) {
+            let divDom = document.createElement("div");
+            divDom.className = "item";
+            divDom.innerHTML = id;
+            return divDom;
+        }
+
+        $(".box").prepend(getItemObject(2));
+        console.log("객체", getItemObject(2));
+
+        function getItemObjectJquery(id) {
+            let divDom = $(`<div class="item">${id}</div>`);
+            return divDom;
+        }
+
+        $(".box").prepend(getItemObjectJquery(3)[0]);
+        console.log("객체", getItemObjectJquery(3)[0]);
+
+    </script>
+</body>
+
+</html>

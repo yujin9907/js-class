@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+ 
+</head>
+<body>
+
+<button>Start Animation</button>
+
+<p>By default, all HTML elements have a static position, and cannot be moved. To manipulate the position, remember to first set the CSS position property of the element to relative, fixed, or absolute!</p>
+
+<div style="background:#98bf21;height:100px;width:100px;position:absolute;"></div>
+<script> 
+    let option = {
+        left : '250px',
+        height : '200px',
+        width : '200px'
+    }
+  
+    // 애니메이트 연결 -> 체이닝
+    // 옵션 좌표값으로 이동
+    $("button").click(function(){
+        $("div").animate(option, 500,()=>{
+            alert("애니메이션 동작완료");
+            $("div").animate({left: '0px'});
+        });
+    });
+
+    $("button").click(function(){
+        $("div").animate(option,500).animate({left:'0px'},500);
+    });
+
+</script>
+</body>
+</html>

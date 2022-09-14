@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    통신은 제이슨으로 함
+    언어에서 제이슨으로 통신한 데이터를 사용하기 위해서
+    그 언어의 오브젝트로 변경
+    자바의 경우엔 클래스화, js는 오브젝트화(훨씬 간단함)
+    <script>
+        // 오브젝트 : 클래스가 없기 때문에 다음과 같이 오브젝트를 사용
+        // json : {"key":value} 
+
+        // 오브젝트
+        let user = {
+            name:"홍길동",
+            age:10,
+            hobby:["축구", "농구"] // 테이블을 따로 넣어야 됨 db에 넣으려면(원자성 위배)
+        }; // 세미콜론 주의(클래스와 다름) = 변수에 담는다는 느낌
+
+        // json
+        let jsonUser = '{"name":"홍길동","age":10,"hobby":["축구","농구"]}';
+        // 자바스크립트는 홀따움표 많이 사용함, json 내려쓰기 하면 안 됨
+
+        console.log(user);
+        console.log(jsonUser);
+
+        console.log(user.age);
+        console.log(user.hobby[0]);
+        // json은 데이터에 접근하기 어려움 -> 각 언어의 오브젝트를 통해 파싱, 데이터의 이동은 json으로
+        // 즉, json -> object / object -> json으로
+        // 자바에서는 클래스를 통해서 json을 파싱함
+
+        // json -> object : json 파싱하기 예시(오브젝트로)
+        console.log("===============================");
+        let jsObject = JSON.parse(jsonUser);
+        console.log(jsObject);
+
+        // object -> json(의 타입은 string)
+        let jsonString = JSON.stringify(jsObject);
+        console.log(jsonString);
+    </script>
+</body>
+</html>

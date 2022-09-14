@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    html 태그를 dom이라고 한다고? 그걸 통한 데이터를 다루는 js를 배울 거임
+    <br>자바스크립트는 무조건 바디 제일 밑에 적어야됨
+    <br>html은 위에서부터 읽음으로, 태그를 받아 처리하려면 태그가 먼저 떠 있어야 됨 당연히
+    <br>문서의 컨테스트 (모든정보)를 다 들고 있음. 알아서 만들어져있는 객체임. document
+    
+    자바는 타입이 없고 무조건 let,
+    el은 엘리멘트, 변수명은 스타일이긴 한데 일단은 커멜로함
+
+    <h1>강아지</h1>
+    <button onclick="btn1()">버튼1</button>
+    <h2 id="cat">고양이</h2>
+    <button onclick="btn2()">버튼2</button>
+    <script>
+        function btn1(){
+            let h1Dom = document.querySelector("h1");
+            console.log(h1Dom);
+            h1Dom.innerHTML = "호랑이";
+        }
+        function btn2(){
+            let catDom = document.querySelector("#cat");
+            console.log(catDom);
+            catDom.innerHTML = "원숭이";
+        }
+
+
+        
+    </script>
+</body>
+</html>
